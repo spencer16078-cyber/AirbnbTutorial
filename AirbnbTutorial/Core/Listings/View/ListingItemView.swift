@@ -29,14 +29,14 @@ struct ListingItemView: View {
             HStack(alignment: .top) {
                 // details
                 VStack(alignment: .leading) {
-                    Text("Miami, Florida")
+                    Text("Broken Bow, Oklahoma")
                         .fontWeight(.semibold)
                         .foregroundStyle(.black)
                     
                     Text("12 Miles Away")
                         .foregroundStyle(.gray)
                     
-                    Text("Nov 3 - 10")
+                    Text("Jun 3 - 10")
                         .foregroundStyle(.gray)
                     
                     HStack(spacing: 4) {
@@ -54,7 +54,7 @@ struct ListingItemView: View {
                 HStack(spacing: 2) {
                     Image(systemName: "star.fill")
                     
-                    Text("4.86")
+                    Text("5.00")
                 }
                 .foregroundStyle(.black)
             }
