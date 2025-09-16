@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Listing: Identifiable, Codable {
+struct Listing: Identifiable, Codable, Hashable {
     let id: String
     let ownerUid: String
     let ownerName: String
@@ -19,11 +19,12 @@ struct Listing: Identifiable, Codable {
     var pricePerNight: Int
     let latitude: Double
     let longitude: Double
+    var imageURLs: [String]
     let address: String
     let city: String
     let state: String
     let title: String
-    var rating: Double
+    var rating: String
     var features: [ListingFeatures]
     var amenities: [ListingAmenities]
     let type: ListingType
@@ -66,6 +67,12 @@ enum ListingAmenities: Int, Codable, Identifiable, Hashable {
     case alarmSystem
     case office
     case balcony
+    case slide
+    case hotTub
+    case backyard
+    case garden
+    case beach
+    case petsAllowed
     
     var title: String {
         switch self {
@@ -77,6 +84,12 @@ enum ListingAmenities: Int, Codable, Identifiable, Hashable {
         case .alarmSystem: return "Alarm System"
         case .office: return "Office"
         case .balcony: return "Balcony"
+        case .slide: return "Slide"
+        case .hotTub: return "Hot Tub"
+        case .backyard: return "Backyard"
+        case .garden: return "Garden"
+        case .beach: return "Beach"
+        case .petsAllowed: return "Pets allowed"
         }
     }
     
@@ -90,6 +103,12 @@ enum ListingAmenities: Int, Codable, Identifiable, Hashable {
         case .alarmSystem: return "checkerboard.shield"
         case .office: return "pencil.and.ruler.fill"
         case .balcony: return "building"
+        case .slide: return "arrow.uturn.down"
+        case .hotTub: return "bathtub"
+        case .backyard: return "tree"
+        case .garden: return "leaf"
+        case .beach: return "sunrise.circle"
+        case .petsAllowed: return "pawprint"
         }
     }
     
@@ -101,6 +120,10 @@ enum ListingType: Int, Codable, Identifiable, Hashable {
     case house
     case townHouse
     case villa
+    case treeHouse
+    case tinyHouse
+    case castle
+    case earthHouse
     
     var description: String {
         switch self {
@@ -108,6 +131,10 @@ enum ListingType: Int, Codable, Identifiable, Hashable {
         case .house: return "House"
         case .townHouse: return "Townhouse"
         case .villa: return "Villa"
+        case .treeHouse: return "Treehouse"
+        case .tinyHouse: return "Tinyhouse"
+        case .castle: return "Castle"
+        case .earthHouse: return "Earthhouse"
         }
     }
     
