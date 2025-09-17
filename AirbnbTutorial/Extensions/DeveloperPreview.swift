@@ -36,8 +36,8 @@ class DeveloperPreview {
         .init(
             id: NSUUID().uuidString,
             ownerUid: NSUUID().uuidString,
-            ownerName: "Olivia Rodrigo",
-            ownerImageUrl: "female-profile-photo",
+            ownerName: "Wade Watts",
+            ownerImageUrl: "wade-profile-photo",
             numberOfBedrooms: 1,
             numberOfBathrooms: 1,
             numberOfGuests: 4,
